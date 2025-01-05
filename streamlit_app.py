@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-numpy._import_array() 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from surprise import SVD
