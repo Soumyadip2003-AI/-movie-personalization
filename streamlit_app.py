@@ -1,8 +1,6 @@
 import numpy as np
-try:
+
     np._import_array()
-except AttributeError:
-    pass
 
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
