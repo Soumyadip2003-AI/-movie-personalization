@@ -21,7 +21,7 @@ def load_data():
 
 ratings, movies, data = load_data()
 
-@st.cache_data
+@st.cache_resource
 def train_collaborative_filtering_model():
     reader = Reader(rating_scale=(0.5, 5.0))
     surprise_data = Dataset.load_from_df(ratings[['userId', 'movieId', 'rating']], reader)
@@ -29,6 +29,7 @@ def train_collaborative_filtering_model():
     model = SVD()
     model.fit(trainset)
     return model
+
 
 model = train_collaborative_filtering_model()
 
